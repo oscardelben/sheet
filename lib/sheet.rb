@@ -4,6 +4,7 @@
 
 require 'sheet/open'
 require 'sheet/write'
+require 'sheet/list'
 
 class Sheet
 
@@ -51,6 +52,8 @@ class Sheet
   def process
     if ['new', 'edit'].include?(@args[0])
       write(@args[1])
+    elsif ['ls', 'list'].include?(@args[0])
+      list
     else
       open(@args[0])
     end
@@ -64,5 +67,9 @@ class Sheet
 
   def write(name)
     Sheet::Write.new(name).write
+  end
+
+  def list
+    Sheet::List.new.list
   end
 end

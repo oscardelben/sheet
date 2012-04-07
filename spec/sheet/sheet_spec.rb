@@ -31,4 +31,14 @@ describe Sheet do
       Sheet.new('edit', 'rails').process
     end
   end
+
+  describe 'list sheets' do
+    it 'should instantiate Sheet::List' do
+      list = double('Sheet::List')
+      list.should_receive(:list)
+
+      Sheet::List.stub(:new) { list }
+      Sheet.new('ls').process
+    end
+  end
 end

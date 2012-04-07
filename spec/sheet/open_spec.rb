@@ -14,7 +14,7 @@ describe Sheet::Open do
     Sheet.should_receive(:write).with(message)
 
     s = Sheet::Open.new('git')
-    s.stub(:sheet_exists?) { true }
+    Sheet.stub(:sheet_exists?).with('git') { true }
     s.stub(:sheet_content) { message }
     s.open
   end
@@ -24,7 +24,7 @@ describe Sheet::Open do
     Sheet.should_receive(:exec).with('open http://example.com')
 
     s = Sheet::Open.new('git')
-    s.stub(:sheet_exists?) { true }
+    Sheet.stub(:sheet_exists?).with('git') { true }
     s.stub(:sheet_content) { message }
     s.open
   end

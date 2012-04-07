@@ -1,10 +1,6 @@
 
-# The purpose of the Sheet class is to dispatch to the various
-# subclasses and to write to standard output.
-#
-# In the future we may add support for custom config files but for now
-# I'd like to keep things simple.
-
+# The Sheet class allows to easily dispatch commands from the command
+# line. It also provides common functionality for other classes.
 
 require 'sheet/open'
 
@@ -22,6 +18,21 @@ class Sheet
     def exec(cmd)
       %x!#{cmd}!
     end
+
+    # @param [String] name the sheet name
+    # @return [String]
+    # Returns the path of a sheet, doesn't check if the file exists
+    def sheet_path(name)
+      File.join(SHEETS_DIR, name)
+    end
+
+    # @param [String] name the sheet name
+    # @return [true]
+    # Used to check if a sheet exists
+    def sheet_exists?(name)
+      name && File.exists?(sheet_path(name))
+    end
+
   end
 
   # Creates a new instance of Sheet, usually followed by a call to {#process}

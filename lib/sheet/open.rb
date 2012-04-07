@@ -9,7 +9,7 @@ class Sheet
     end
 
     def open
-      if sheet_exists?
+      if Sheet.sheet_exists?(name)
         process_sheet_content
       else
         Sheet.write "A cheat named #{name} doesn't exist.\nYou can create one with sheet new #{name}"
@@ -36,16 +36,9 @@ class Sheet
       sheet_content.match(/(http.+)$/)[1]
     end
 
-    def sheet_exists?
-      name && File.exists?(sheet_path)
-    end
-
     def sheet_content
-      @sheet_content ||= File.read(sheet_path)
+      @sheet_content ||= File.read(Sheet.sheet_path(name))
     end
 
-    def sheet_path
-      File.join(Sheet::SHEETS_DIR, name)
-    end
   end
 end

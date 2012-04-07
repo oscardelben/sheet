@@ -49,7 +49,7 @@ class Sheet
   # Where the dispatching really happens. We check to see what the user
   # intended to do and then instantiate the proper class
   def process
-    if @args[0] == 'new'
+    if ['new', 'edit'].include?(@args[0])
       write(@args[1])
     else
       open(@args[0])

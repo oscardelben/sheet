@@ -22,4 +22,13 @@ describe Sheet do
     end
   end
 
+  describe 'editing sheets' do
+    it 'should instantiate Sheet::Write' do
+      write = double('Sheet::Write')
+      write.should_receive(:write)
+
+      Sheet::Write.stub(:new).with('rails') { write }
+      Sheet.new('edit', 'rails').process
+    end
+  end
 end

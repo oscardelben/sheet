@@ -1,6 +1,28 @@
 = sheet
 
-Description goes here.
+Easily create and access sheets from your terminal.
+
+Note: sheet uses the $EDITOR variable to figure out how to open sheets
+(for writing).
+
+Examples:
+
+    sheet git # opens git sheet
+    sheet git 'undo commit' # opens git sheet, and searches for 'undo commit'
+    sheet new git # creates git sheet
+    sheet edit git # edit git sheet
+
+Once you open a sheet, you can write whatever you want into it.
+
+### Opening urls
+
+You can use the special format to automatically open a url:
+
+    url: http://example/com
+
+Behind the scenes, sheet stores your sheets in txt files in the
+~/.sheets directory. You can go there and modify the files if you want.
+
 
 == Contributing to sheet
  

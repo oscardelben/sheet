@@ -19,9 +19,9 @@ class Sheet
     private
 
     def process_sheet_content
-      if contains_url_format?
+      if contains_url_format? && cmd = Sheet.open_command
         # TODO: check if open is available
-        Sheet.exec "open #{extract_url}"
+        Sheet.exec "#{cmd} #{extract_url}"
       else
         Sheet.write sheet_content
       end

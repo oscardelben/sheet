@@ -28,6 +28,7 @@ class Sheet
       File.join(sheets_dir, name)
     end
 
+    # Where the sheets directory is (absolute path)
     def sheets_dir
       File.expand_path(SHEETS_DIR)
     end
@@ -39,8 +40,23 @@ class Sheet
       name && File.exists?(sheet_path(name))
     end
 
+    # @return [String]
+    # Used to check the preferred editor for the user
     def editor
       exec("echo $EDITOR").chomp
+    end
+
+    # If we're using mac, we should use open to open urls.
+    # If we're using linux, we can probably use xdg-open
+    # Otherwise return nil
+    def open_command
+      if RUBY_PLATFORM =~ /darwin/
+        'open'
+      elsif RUBY_PLATFORM =~ /linux/
+        'xdg-open'
+      else
+        nil
+      end
     end
 
   end

@@ -20,8 +20,20 @@ describe Sheet::Open do
   end
 
   it "should open a url" do
+    Sheet.stub(:open_command) { 'open' }
     message = "url: http://example.com"
     Sheet.should_receive(:exec).with('open http://example.com')
+
+    s = Sheet::Open.new('git')
+    Sheet.stub(:sheet_exists?).with('git') { true }
+    s.stub(:sheet_content) { message }
+    s.open
+  end
+
+  it "should fallback to showing the content if an open command is not present" do
+    Sheet.stub(:open_command) { nil}
+    message = "url: http://example.com"
+    Sheet.should_receive(:puts).with('url: http://example.com')
 
     s = Sheet::Open.new('git')
     Sheet.stub(:sheet_exists?).with('git') { true }

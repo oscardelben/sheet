@@ -3,6 +3,7 @@
 # line. It also provides common functionality for other classes.
 
 require 'sheet/open'
+require 'sheet/write'
 
 class Sheet
 
@@ -33,6 +34,10 @@ class Sheet
       name && File.exists?(sheet_path(name))
     end
 
+    def editor
+      exec("echo $EDITOR").chomp
+    end
+
   end
 
   # Creates a new instance of Sheet, usually followed by a call to {#process}
@@ -44,12 +49,20 @@ class Sheet
   # Where the dispatching really happens. We check to see what the user
   # intended to do and then instantiate the proper class
   def process
-    open
+    if @args[0] == 'new'
+      write(@args[1])
+    else
+      open(@args[0])
+    end
   end
 
   private
 
-  def open
-    Sheet::Open.new(@args.first).open
+  def open(name)
+    Sheet::Open.new(name).open
+  end
+
+  def write(name)
+    Sheet::Write.new(name).write
   end
 end

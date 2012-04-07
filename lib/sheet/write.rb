@@ -8,6 +8,7 @@ class Sheet::Write
   end
 
   def write
+    create_dir_if_doesnt_exist
     if editor_is_set?
       Sheet.exec("#{Sheet.editor} #{Sheet.sheet_path(name)}")
     else
@@ -19,5 +20,11 @@ class Sheet::Write
 
   def editor_is_set?
     (editor = Sheet.editor) && editor.length > 0
+  end
+
+  def create_dir_if_doesnt_exist
+    if ! Dir.directory?(Sheet::SHEETS_DIR)
+      Dir.mkdir(Sheet::SHEETS_DIR)
+    end
   end
 end

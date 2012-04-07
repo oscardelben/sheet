@@ -25,7 +25,11 @@ class Sheet
     # @return [String]
     # Returns the path of a sheet, doesn't check if the file exists
     def sheet_path(name)
-      File.join(SHEETS_DIR, name)
+      File.join(sheets_dir, name)
+    end
+
+    def sheets_dir
+      File.expand_path(SHEETS_DIR)
     end
 
     # @param [String] name the sheet name

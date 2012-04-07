@@ -17,8 +17,8 @@ Jeweler::Tasks.new do |gem|
   gem.name = "sheet"
   gem.homepage = "http://github.com/oscardelben/sheet"
   gem.license = "MIT"
-  gem.summary = %Q{TODO: one-line summary of your gem}
-  gem.description = %Q{TODO: longer description of your gem}
+  gem.summary = %Q{snippets for your command line}
+  gem.description = %Q{sheets allows you to store and browse snippets of text from your command line.}
   gem.email = "info@oscardelben.com"
   gem.authors = ["Oscar Del Ben"]
   # dependencies defined in Gemfile

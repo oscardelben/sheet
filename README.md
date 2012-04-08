@@ -3,6 +3,10 @@
 Easily create and access snippets of text from your terminal. `sheet` is
 your own personal wiki.
 
+```
+gem install sheet
+```
+
 Examples:
 ```
 sheet           # with no arguments it will just list all your sheets

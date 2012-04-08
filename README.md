@@ -3,12 +3,15 @@
 Easily create and access snippets of text from your terminal. `sheet` is
 your own personal wiki.
 
-```
+```bash
+
 gem install sheet
 ```
 
 Examples:
-```
+
+```bash
+
 sheet           # with no arguments it will just list all your sheets
 sheet git       # opens git sheet
 sheet new git   # creates git sheet
@@ -26,7 +29,8 @@ language? I've got you covered.
 When writing your snippet, you can use this special format to
 automatically open a url when opening your sheet:
 
-```
+```yaml
+
 url: http://example/com
 ```
 

@@ -2,4 +2,4 @@
 
 require File.join(File.dirname(__FILE__), '../lib/sheet')
 
-Sheet.new(ARGV)
+Sheet.new(ARGV).process

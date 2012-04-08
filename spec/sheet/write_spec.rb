@@ -6,7 +6,7 @@ describe Sheet::Write do
 
   it 'opens a new file for writing' do
     cmd = "#{editor} #{Sheet.sheet_path('tmux')}"
-    Sheet.should_receive(:exec).with(cmd)
+    Sheet.should_receive(:exec).with(cmd, true)
 
     Sheet.stub(:editor) { editor }
 

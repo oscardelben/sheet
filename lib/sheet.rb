@@ -17,8 +17,12 @@ class Sheet
     end
 
     # Utility to execute system commands
-    def exec(cmd)
-      %x!#{cmd}!
+    def exec(cmd, replace_current_process=false)
+      if replace_current_process
+        Kernel.exec cmd
+      else
+        %x!#{cmd}!
+      end
     end
 
     # @param [String] name the sheet name
@@ -64,7 +68,7 @@ class Sheet
   # Creates a new instance of Sheet, usually followed by a call to {#process}
   # @param [Array] args command line options
   def initialize(*args)
-    @args = args
+    @args = args.flatten
   end
 
   # Where the dispatching really happens. We check to see what the user

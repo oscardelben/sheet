@@ -10,7 +10,7 @@ class Sheet::Write
   def write
     create_dir_if_doesnt_exist
     if editor_is_set?
-      Sheet.exec("#{Sheet.editor} #{Sheet.sheet_path(name)}")
+      Sheet.exec("#{Sheet.editor} #{Sheet.sheet_path(name)}", true)
     else
       Sheet.write "Please set the $EDITOR variable to write files" 
     end

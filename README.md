@@ -8,12 +8,12 @@ gem install sheet
 ```
 
 Examples:
-```
-sheet           # with no arguments it will just list all your sheets
-sheet git       # opens git sheet
-sheet new git   # creates git sheet
-sheet edit git  # edit git sheet
-```
+
+    sheet           # with no arguments it will just list all your sheets
+    sheet git       # opens git sheet
+    sheet new git   # creates git sheet
+    sheet edit git  # edit git sheet
+
 
 Use `sheet new <term>` to create your first sheet. Useful for jotting
 down commands that you use often but somehow never remember.

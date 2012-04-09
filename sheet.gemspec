@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = "sheet"
-  s.version = "0.1.0"
+  s.version = "0.1.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Oscar Del Ben"]
-  s.date = "2012-04-08"
+  s.date = "2012-04-09"
   s.description = "sheets allows you to store and browse snippets of text from your command line."
   s.email = "info@oscardelben.com"
   s.executables = ["sheet"]
@@ -31,6 +31,7 @@ Gem::Specification.new do |s|
     "lib/sheet/list.rb",
     "lib/sheet/open.rb",
     "lib/sheet/write.rb",
+    "sheet.gemspec",
     "spec/sheet/list_spec.rb",
     "spec/sheet/open_spec.rb",
     "spec/sheet/sheet_spec.rb",

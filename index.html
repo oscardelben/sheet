@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="Sheet : Text snippets for the command line" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Sheet</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/oscardelben/sheet">Fork Me on GitHub</a>
+
+          <h1 id="project_title">Sheet</h1>
+          <h2 id="project_tagline">Text snippets for the command line</h2>
+
+          <section id="downloads">
+            <a class="zip_download_link" href="https://github.com/oscardelben/sheet/zipball/master">Download this project as a .zip file</a>
+            <a class="tar_download_link" href="https://github.com/oscardelben/sheet/tarball/master">Download this project as a tar.gz file</a>
+          </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>Sheet</h1>
+
+<p>Easily create and access snippets of text from your terminal. <code>sheet</code> is
+your own personal wiki.</p>
+
+<div class="highlight">
+<pre>
+gem install sheet
+</pre>
+</div>
+
+
+<p>Examples:</p>
+
+<div class="highlight">
+<pre>
+sheet           <span class="c"># with no arguments it will just list all your sheets</span>
+sheet git       <span class="c"># opens git sheet</span>
+sheet new git   <span class="c"># creates git sheet</span>
+sheet edit git  <span class="c"># edit git sheet</span>
+</pre>
+</div>
+
+
+<p>Use <code>sheet new &lt;term&gt;</code> to create your first sheet. Useful for jotting
+down commands that you use often but somehow never remember.</p>
+
+<h3>Opening urls</h3>
+
+<p>Found a great cheat sheet <em>online</em> about jquery or your favorite
+language? I've got you covered.</p>
+
+<p>When writing your snippet, you can use this special format to
+automatically open a url when opening your sheet:</p>
+
+<div class="highlight">
+<pre>
+<span class="l-Scalar-Plain">url</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">http://example/com</span>
+</pre>
+</div>
+
+
+<p>Make sure that's you don't have trailing lines and sheet will
+automatically open that url for you</p>
+
+<p>Please note that to open urls, sheet will use the <code>open</code> command on mac
+os x and <code>xdg-open</code> in linux. Patches welcome for other systems.</p>
+
+<h3>Behind the scenes</h3>
+
+<p><code>sheet</code> stores your sheets in text files in the
+<code>~/.sheets</code> directory. You can go there and modify the files manually if you desire,
+or you can source them into version control and share them across
+multiple systems.</p>
+
+<p>For writing files, <code>sheet</code> looks for the <code>$EDITOR</code> global variable, and
+will raise an error if no editor was found.</p>
+
+<h3>Help your stuff is broken</h3>
+
+<p>I tested this software in mac os x with Ruby 1.9. If you find any bug
+with other platforms/interpreters please let me know and I'll push a
+fix.</p>
+
+<h3>Contributing to sheet</h3>
+
+<ul>
+<li>Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet.</li>
+<li>Check out the issue tracker to make sure someone already hasn't requested it and/or contributed it.</li>
+<li>Fork the project.</li>
+<li>Start a feature/bugfix branch.</li>
+<li>Commit and push until you are happy with your contribution.</li>
+<li>Make sure to add tests for it. This is important so I don't break it in a future version unintentionally.</li>
+<li>Please try not to mess with the Rakefile, version, or history. If you want to have your own version, or is otherwise necessary, that is fine, but please isolate to its own commit so I can cherry-pick around it.</li>
+</ul><h3>Copyright</h3>
+
+<p>Copyright (c) 2012 Oscar Del Ben. See LICENSE.txt for
+further details.</p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Sheet maintained by <a href="https://github.com/oscardelben">oscardelben</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>

@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = "sheet"
-  s.version = "0.1.2"
+  s.version = "0.1.3"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Oscar Del Ben"]
@@ -28,10 +28,12 @@ Gem::Specification.new do |s|
     "VERSION",
     "bin/sheet",
     "lib/sheet.rb",
+    "lib/sheet/copy.rb",
     "lib/sheet/list.rb",
     "lib/sheet/open.rb",
     "lib/sheet/write.rb",
     "sheet.gemspec",
+    "spec/sheet/copy_spec.rb",
     "spec/sheet/list_spec.rb",
     "spec/sheet/open_spec.rb",
     "spec/sheet/sheet_spec.rb",

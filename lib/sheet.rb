@@ -76,7 +76,7 @@ class Sheet
   def process
     if ['new', 'edit'].include?(@args[0])
       write(@args[1])
-    elsif ['ls', 'list'].include?(@args[0])
+    elsif ['ls', 'list'].include?(@args[0]) || @args.empty?
       list
     else
       open(@args[0])

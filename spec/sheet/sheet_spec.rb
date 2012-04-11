@@ -40,5 +40,13 @@ describe Sheet do
       Sheet::List.stub(:new) { list }
       Sheet.new('ls').process
     end
+
+    it 'should instantiate Sheet::List with empty arguments' do
+      list = double('Sheet::List')
+      list.should_receive(:list)
+
+      Sheet::List.stub(:new) { list }
+      Sheet.new.process
+    end
   end
 end

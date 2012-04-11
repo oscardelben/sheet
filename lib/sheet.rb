@@ -5,6 +5,7 @@
 require 'sheet/open'
 require 'sheet/write'
 require 'sheet/list'
+require 'sheet/copy'
 
 class Sheet
 
@@ -56,11 +57,23 @@ class Sheet
     def open_command
       if RUBY_PLATFORM =~ /darwin/
         'open'
-      elsif RUBY_PLATFORM =~ /linux/
+      elsif RUBY_PLATFORM =~ /linux/ && command_available?('xdg-open')
         'xdg-open'
       else
         nil
       end
+    end
+
+    # Returns the copy to clipboard command or nil if no command is
+    # found
+    def copy_command
+      ['pbcopy', 'xclip'].find { |cmd| command_available?(cmd) }
+    end
+
+    # Utility to check wherever a command is available in the user
+    # system
+    def command_available?(cmd)
+      %x!type #{cmd}!.chomp.length > 0
     end
 
   end
@@ -73,11 +86,14 @@ class Sheet
 
   # Where the dispatching really happens. We check to see what the user
   # intended to do and then instantiate the proper class
+  # TODO: refactor in a switch statement
   def process
     if ['new', 'edit'].include?(@args[0])
       write(@args[1])
     elsif ['ls', 'list'].include?(@args[0]) || @args.empty?
       list
+    elsif ['cp', 'copy'].include?(@args[0])
+      copy(@args[1])
     else
       open(@args[0])
     end
@@ -95,5 +111,9 @@ class Sheet
 
   def list
     Sheet::List.new.list
+  end
+
+  def copy(name)
+    Sheet::Copy.new(name).copy
   end
 end

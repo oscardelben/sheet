@@ -16,6 +16,7 @@ sheet           # with no arguments it will just list all your sheets
 sheet git       # opens git sheet
 sheet new git   # creates git sheet
 sheet edit git  # edit git sheet
+sheet copy git  # Copies content of the sheet to the clipboard
 ```
 
 Use `sheet new <term>` to create your first sheet. Useful for jotting
@@ -39,6 +40,12 @@ automatically open that url for you
 
 Please note that to open urls, sheet will use the `open` command on mac
 os x and `xdg-open` in linux. Patches welcome for other systems.
+
+### Copying sheets
+
+sheet will use either `pbcopy` or `xclip` to copy the content of a sheet
+to the clipboard, make sure you have one of those installed (or open an
+issue indicating another copy program).
 
 ### Behind the scenes
 

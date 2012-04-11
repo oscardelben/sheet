@@ -49,4 +49,14 @@ describe Sheet do
       Sheet.new.process
     end
   end
+
+  describe 'copy sheet' do
+    it 'should instantiate Sheet::Copy' do
+      copy = double('Sheet::Copy')
+      copy.should_receive(:copy)
+
+      Sheet::Copy.stub(:new).with('git') { copy }
+      Sheet.new('copy', 'git').process
+    end
+  end
 end

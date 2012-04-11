@@ -12,11 +12,12 @@ Examples:
 
 ```bash
 
-sheet           # with no arguments it will just list all your sheets
+sheet           # with no arguments it will just list all your sheets.
+sheet list      # lists all your sheets. Equivalent to running sheet with no arguments. Aliased to sheet ls.
 sheet git       # opens git sheet
 sheet new git   # creates git sheet
 sheet edit git  # edit git sheet
-sheet copy git  # Copies content of the sheet to the clipboard
+sheet copy git  # Copies content of the sheet to the clipboard. Aliased to sheet cp
 ```
 
 Use `sheet new <term>` to create your first sheet. Useful for jotting

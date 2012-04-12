@@ -23,7 +23,7 @@ class Sheet::Write
   end
 
   def create_dir_if_doesnt_exist
-    if ! Dir.exists?(Sheet.sheets_dir)
+    if ! File.directory?(Sheet.sheets_dir)
       Dir.mkdir(Sheet.sheets_dir)
     end
   end

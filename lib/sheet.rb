@@ -1,4 +1,3 @@
-
 # The Sheet class allows to easily dispatch commands from the command
 # line. It also provides common functionality for other classes.
 
@@ -10,7 +9,7 @@ require 'sheet/copy'
 class Sheet
 
   SHEETS_DIR = '~/.sheets/'.freeze
-
+  
   class << self
     # Utility to write to standard output
     def write(message)
@@ -34,8 +33,11 @@ class Sheet
     end
 
     # Where the sheets directory is (absolute path)
+    #
+    # This defaults to ~/.sheets,
+    # but can be overridden by the SHEETS_DIR env var
     def sheets_dir
-      File.expand_path(SHEETS_DIR)
+      File.expand_path(ENV['SHEETS_DIR'] || SHEETS_DIR)
     end
 
     # @param [String] name the sheet name

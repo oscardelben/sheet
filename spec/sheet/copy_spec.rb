@@ -4,8 +4,7 @@ describe Sheet::Copy do
 
   it 'should copy the snippet' do
     cmd = "cat #{Sheet.sheet_path('git')} | pbcopy"
-    Sheet.should_receive(:exec).with(cmd)
-    Sheet.should_receive(:write).with("Copied!")
+    Sheet.should_receive(:exec).with(cmd, true)
 
     Sheet.stub(:copy_command) { 'pbcopy' }
     Sheet.stub(:sheet_exists?).with('git') { true }

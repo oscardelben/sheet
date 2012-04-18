@@ -28,8 +28,7 @@ class Sheet
     def copy_sheet
       copy_cmd = Sheet.copy_command
       if copy_cmd
-        Sheet.exec("cat #{Sheet::sheet_path(name)} | #{copy_cmd}")
-        Sheet.write("Copied!")
+        Sheet.exec("cat #{Sheet::sheet_path(name)} | #{copy_cmd}", true)
       else
         Sheet.write("Could not copy sheet, no copy command found")
       end

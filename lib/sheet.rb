@@ -90,7 +90,7 @@ class Sheet
   # intended to do and then instantiate the proper class
   # TODO: refactor in a switch statement
   def process
-    if ['new', 'edit'].include?(@args[0])
+    if ['new', 'edit'].include?(@args[0]) && @args[1]
       write(@args[1])
     elsif ['ls', 'list'].include?(@args[0]) || @args.empty?
       list

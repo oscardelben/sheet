@@ -9,7 +9,7 @@ require 'sheet/copy'
 class Sheet
 
   SHEETS_DIR = '~/.sheets/'.freeze
-  
+
   class << self
     # Utility to write to standard output
     def write(message)
@@ -75,7 +75,7 @@ class Sheet
     # Utility to check wherever a command is available in the user
     # system
     def command_available?(cmd)
-      %x!type #{cmd}!.chomp.length > 0
+      %x!type #{cmd}!.chomp.length > 0 rescue false
     end
 
   end

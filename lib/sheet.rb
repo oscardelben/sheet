@@ -50,7 +50,11 @@ class Sheet
     # @return [String]
     # Used to check the preferred editor for the user
     def editor
-      exec("echo $EDITOR").chomp
+      e = exec("echo $EDITOR").chomp
+      if e == ""
+        e = exec("echo $VISUAL").chomp
+      end
+      e
     end
 
     # If we're using mac, we should use open to open urls.

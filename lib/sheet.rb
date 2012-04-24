@@ -78,6 +78,11 @@ class Sheet
       %x!type #{cmd}!.chomp.length > 0 rescue false
     end
 
+    # Returns true if ~/.sheets exists
+    def sheets_directory_exists?
+      File.directory?(Sheet.sheets_dir)
+    end
+
   end
 
   # Creates a new instance of Sheet, usually followed by a call to {#process}

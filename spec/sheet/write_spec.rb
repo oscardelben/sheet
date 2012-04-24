@@ -4,6 +4,10 @@ describe Sheet::Write do
 
   let (:editor) { 'vim' }
 
+  before do
+    Sheet.stub(:sheets_directory_exists?) { true }
+  end
+
   it 'opens a new file for writing' do
     cmd = "#{editor} #{Sheet.sheet_path('tmux')}"
     Sheet.should_receive(:exec).with(cmd, true)

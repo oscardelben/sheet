@@ -19,26 +19,23 @@ class Sheet
     private
 
     def process_sheet_content
-      if contains_url_format? && cmd = Sheet.open_command
+      if !sheet_urls.empty? && cmd = Sheet.open_command
         # TODO: check if open is available
-        Sheet.exec "#{cmd} #{extract_url}"
+        sheet_urls.each do |url|
+          Sheet.exec "#{cmd} #{url.chomp.gsub(/url: /,'')}"
+        end
       else
         Sheet.write sheet_content
       end
     end
 
-    def contains_url_format?
-      sheet_content.split("\n").size == 1 &&
-        sheet_content =~ /^url:\s*http.+$/
-    end
-
-    def extract_url
-      sheet_content.match(/(http.+)$/)[1]
-    end
-
     def sheet_content
       @sheet_content ||= File.read(Sheet.sheet_path(name))
     end
-
+    
+    def sheet_urls
+      @sheet_urls ||= sheet_content.split("\n").reject {|line| line !~ /^url:/ }
+    end    
+    
   end
 end

@@ -65,12 +65,6 @@ multiple systems.
 For writing files, `sheet` looks for the `$EDITOR` global variable, and
 will raise an error if no editor was found.
 
-### Help your stuff is broken
-
-I tested this software in mac os x with Ruby 1.9. If you find any bug
-with other platforms/interpreters please let me know and I'll push a
-fix.
-
 ### Contributing to sheet
 
 * Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet.

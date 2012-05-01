@@ -3,11 +3,12 @@ class Sheet::Write
 
   attr_accessor :name
 
-  def initialize(name)
+  def initialize(name=nil)
     @name = name
   end
 
   def write
+    return Sheet.write("Please specify a name") unless name
     create_dir_if_doesnt_exist
     if editor_is_set?
       Sheet.exec("#{Sheet.editor} #{Sheet.sheet_path(name)}", true)

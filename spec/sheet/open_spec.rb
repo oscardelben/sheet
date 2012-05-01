@@ -4,14 +4,14 @@ describe Sheet::Open do
 
   it "should show a message when the app doesn't exist" do
     message = "A cheat named rails doesn't exist.\nYou can create one with sheet new rails"
-    Sheet.should_receive(:write).with(message)
+    Sheet.should_receive(:display).with(message)
 
     Sheet::Open.new('rails').open
   end
 
   it "should output the sheet content" do
     message = "My sheet about git"
-    Sheet.should_receive(:write).with(message)
+    Sheet.should_receive(:display).with(message)
 
     s = Sheet::Open.new('git')
     Sheet.stub(:sheet_exists?).with('git') { true }

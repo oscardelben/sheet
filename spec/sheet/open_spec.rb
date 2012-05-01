@@ -17,18 +17,19 @@ describe Sheet::Open do
     Sheet.stub(:sheet_exists?).with('git') { true }
     s.stub(:sheet_content) { message }
     s.open
-  end
-
-  it "should open a url" do
+  end  
+  
+  it "should open all urls" do
     Sheet.stub(:open_command) { 'open' }
-    message = "url: http://example.com"
+    message = "url: http://example.com\nurl: http://google.com"
     Sheet.should_receive(:exec).with('open http://example.com')
-
+    Sheet.should_receive(:exec).with('open http://google.com')
+ 
     s = Sheet::Open.new('git')
     Sheet.stub(:sheet_exists?).with('git') { true }
     s.stub(:sheet_content) { message }
     s.open
-  end
+  end  
 
   it "should fallback to showing the content if an open command is not present" do
     Sheet.stub(:open_command) { nil}

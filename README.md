@@ -3,6 +3,8 @@
 Easily create and access snippets of text from your terminal. `sheet` is
 your own personal wiki.
 
+![Build status](https://secure.travis-ci.org/oscardelben/sheet.png)
+
 ```bash
 
 gem install sheet

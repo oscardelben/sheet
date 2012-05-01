@@ -36,8 +36,13 @@ automatically open a url when opening your sheet:
 url: http://example/com
 ```
 
-Make sure that's you don't have trailing lines and sheet will
-automatically open that url for you
+You can open mulitple urls at once by specifying each url in a new line.
+
+```yaml
+
+url: https://github.com/oscardelben
+url: http://example.com
+```
 
 Please note that to open urls, sheet will use the `open` command on mac
 os x and `xdg-open` in linux. Patches welcome for other systems.

@@ -20,9 +20,8 @@ class Sheet
 
     def process_sheet_content
       if !sheet_urls.empty? && cmd = Sheet.open_command
-        # TODO: check if open is available
         sheet_urls.each do |url|
-          Sheet.exec "#{cmd} #{url.chomp.gsub(/url: /,'')}"
+          Sheet.exec "#{cmd} #{url.chomp.sub(/url: /,'')}"
         end
       else
         Sheet.write sheet_content
@@ -32,10 +31,10 @@ class Sheet
     def sheet_content
       @sheet_content ||= File.read(Sheet.sheet_path(name))
     end
-    
+
     def sheet_urls
       @sheet_urls ||= sheet_content.split("\n").reject {|line| line !~ /^url:/ }
-    end    
-    
+    end
+
   end
 end

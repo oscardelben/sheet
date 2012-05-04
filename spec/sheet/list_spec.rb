@@ -1,4 +1,3 @@
-
 require 'spec_helper'
 
 describe Sheet::List do
@@ -22,7 +21,7 @@ describe Sheet::List do
     end
 
     it 'shows a message' do
-      Sheet.should_receive(:write).with("No sheet found. Create a new sheet with `sheet new <name>`")
+      Sheet.should_receive(:display).with("No sheet found. Create a new sheet with `sheet new <name>`")
 
       Sheet::List.new.list
     end

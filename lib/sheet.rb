@@ -12,7 +12,7 @@ class Sheet
 
   class << self
     # Utility to write to standard output
-    def write(message)
+    def display(message)
       puts message
     end
 
@@ -111,7 +111,6 @@ class Sheet
   end
 
   private
-
   def open(name)
     Sheet::Open.new(name).open
   end

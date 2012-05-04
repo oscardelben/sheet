@@ -111,19 +111,19 @@ class Sheet
   end
 
   private
-    def open(name)
-      Sheet::Open.new(name).open
-    end
+  def open(name)
+    Sheet::Open.new(name).open
+  end
 
-    def write(name)
-      Sheet::Write.new(name).write
-    end
+  def write(name)
+    Sheet::Write.new(name).write
+  end
 
-    def list
-      Sheet::List.new.list
-    end
+  def list
+    Sheet::List.new.list
+  end
 
-    def copy(name)
-      Sheet::Copy.new(name).copy
-    end
+  def copy(name)
+    Sheet::Copy.new(name).copy
+  end
 end

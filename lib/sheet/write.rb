@@ -17,15 +17,15 @@ class Sheet
     end
 
     private
-      def editor_is_set?
-        (editor = Sheet.editor) && editor.length > 0
-      end
+    def editor_is_set?
+      (editor = Sheet.editor) && editor.length > 0
+    end
 
-      def create_dir_if_doesnt_exist
-        if ! Sheet.sheets_directory_exists?
-          Dir.mkdir(Sheet.sheets_dir)
-        end
+    def create_dir_if_doesnt_exist
+      if ! Sheet.sheets_directory_exists?
+        Dir.mkdir(Sheet.sheets_dir)
       end
+    end
 
   end
 end

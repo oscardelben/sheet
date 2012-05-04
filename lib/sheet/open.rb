@@ -15,23 +15,23 @@ class Sheet
     end
 
     private
-      def process_sheet_content
-        if !sheet_urls.empty? && cmd = Sheet.open_command
-          sheet_urls.each do |url|
-            Sheet.exec "#{cmd} #{url.chomp.sub(/url: /,'')}"
-          end
-        else
-          Sheet.display sheet_content
+    def process_sheet_content
+      if !sheet_urls.empty? && cmd = Sheet.open_command
+        sheet_urls.each do |url|
+          Sheet.exec "#{cmd} #{url.chomp.sub(/url: /,'')}"
         end
+      else
+        Sheet.display sheet_content
       end
+    end
 
-      def sheet_content
-        @sheet_content ||= File.read(Sheet.sheet_path(name))
-      end
+    def sheet_content
+      @sheet_content ||= File.read(Sheet.sheet_path(name))
+    end
 
-      def sheet_urls
-        @sheet_urls ||= sheet_content.split("\n").reject {|line| line !~ /^url:/ }
-      end
+    def sheet_urls
+      @sheet_urls ||= sheet_content.split("\n").reject {|line| line !~ /^url:/ }
+    end
 
   end
 end

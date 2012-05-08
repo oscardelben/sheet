@@ -9,7 +9,7 @@ describe Sheet::Write do
   end
 
   it 'shows an error message if no argument is passed' do
-    Sheet.should_receive(:write).with('Please specify a name')
+    Sheet.should_receive(:display).with('Please specify a name')
     Sheet::Write.new.write
   end
 
@@ -24,7 +24,7 @@ describe Sheet::Write do
 
   it 'returns an error if no editor is found' do
     Sheet.stub(:editor) { nil }
-    Sheet.should_receive(:write).with { "Please set the $EDITOR variable to write files" }
+    Sheet.should_receive(:display).with { "Please set the $EDITOR variable to write files" }
 
     Sheet::Write.new('tmux').write
   end

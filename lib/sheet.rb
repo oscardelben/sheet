@@ -65,6 +65,8 @@ class Sheet
         'open'
       elsif RUBY_PLATFORM =~ /linux/ && command_available?('xdg-open')
         'xdg-open'
+      elsif RUBY_PLATFORM =~ /cygwin/
+        'cygstart'
       else
         nil
       end

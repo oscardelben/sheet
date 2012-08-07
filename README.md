@@ -47,7 +47,8 @@ url: http://example.com
 ```
 
 Please note that to open urls, sheet will use the `open` command on mac
-os x and `xdg-open` in linux. Patches welcome for other systems.
+os x and `xdg-open` in linux and `cygstart` in cygwin. Patches welcome
+for other systems.
 
 ### Copying sheets
 

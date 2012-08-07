@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = "sheet"
-  s.version = "0.2.0"
+  s.version = "0.2.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Oscar Del Ben"]
-  s.date = "2012-05-01"
+  s.date = "2012-08-07"
   s.description = "sheets allows you to store and browse snippets of text from your command line."
   s.email = "info@oscardelben.com"
   s.executables = ["sheet"]
@@ -20,6 +20,7 @@ Gem::Specification.new do |s|
   s.files = [
     ".document",
     ".rspec",
+    ".travis.yml",
     "Gemfile",
     "Gemfile.lock",
     "LICENSE.txt",
@@ -43,7 +44,7 @@ Gem::Specification.new do |s|
   s.homepage = "http://github.com/oscardelben/sheet"
   s.licenses = ["MIT"]
   s.require_paths = ["lib"]
-  s.rubygems_version = "1.8.21"
+  s.rubygems_version = "1.8.23"
   s.summary = "snippets for your command line"
 
   if s.respond_to? :specification_version then

@@ -81,7 +81,7 @@ class Sheet
     # Utility to check wherever a command is available in the user
     # system
     def command_available?(cmd)
-      %x!type #{cmd}!.chomp.length > 0 rescue false
+      %x!bash -c "type #{cmd}" 2>/dev/null!.chomp.length > 0 rescue false
     end
 
     # Returns true if ~/.sheets exists

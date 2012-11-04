@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = "sheet"
-  s.version = "0.2.1"
+  s.version = "0.2.2"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Oscar Del Ben"]
-  s.date = "2012-08-07"
+  s.date = "2012-11-04"
   s.description = "sheets allows you to store and browse snippets of text from your command line."
   s.email = "info@oscardelben.com"
   s.executables = ["sheet"]

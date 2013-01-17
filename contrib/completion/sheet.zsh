@@ -39,19 +39,3 @@ case "$state" in
         ;;
     esac
 esac
-
-#if (( CURRENT == 2 )); then
-  #compadd "$sheets"
-#fi
-
-#case "$words[2]" in
-  #edit|copy)
-    #_arguments \
-      #'*:sheets:($sheets)'
-    #;;
-  #new)
-    #_arguments \
-      #'*:insert new name for your sheet:'
-#esac
-
-#return 0

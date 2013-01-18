@@ -1,6 +1,15 @@
 #compdef sheet
 # Zsh completion for 'sheet' (http://oscardelben.com/sheet/).
 # Author: Pablo Olmos de Aguilera Corradini (pablo at glatelier dot org)
+#
+# To make completion work in zsh, you have to make sure:
+# * this file is preceded with an underscore `_' like _sheet
+# * its directory it's on the $fpath variable; a quick way to do it it's adding
+#   something like fpath=(~/.completions $fpath) in your ~/.zshrc file
+# * make sure compinit it's being invoked in your .zshrc file:
+#
+#   autoload -U compinit
+#   compinit
 
 local state expl ret=1
 local -a sheets commands
